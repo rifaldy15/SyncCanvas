@@ -291,7 +291,7 @@ export function DashboardContent({
           </motion.div>
 
           {/* Tabs */}
-          <div className="mt-6 flex items-center gap-1 border-b border-surface-700/50">
+          <div className="mt-6 flex items-center gap-1 border-b border-surface-700/50 overflow-x-auto whitespace-nowrap pb-px no-scrollbar">
             {TABS.map((tab) => (
               <button
                 key={tab.id}

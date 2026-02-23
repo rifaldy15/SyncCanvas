@@ -280,12 +280,18 @@ export function DocumentsContent({
           {viewMode === "list" ? (
             <div className="rounded-2xl border border-surface-700/50 overflow-hidden">
               {/* Table Header */}
-              <div className="grid grid-cols-12 gap-4 border-b border-surface-700/50 bg-surface-900/50 px-5 py-3 text-xs font-semibold uppercase tracking-wider text-text-muted">
-                <div className="col-span-5">Document Name</div>
-                <div className="col-span-2">Owner</div>
-                <div className="col-span-2">Last Edited</div>
-                <div className="col-span-2">Status</div>
-                <div className="col-span-1 text-right">Actions</div>
+              <div className="grid grid-cols-12 gap-2 sm:gap-4 border-b border-surface-700/50 bg-surface-900/50 px-3 sm:px-5 py-3 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-text-muted">
+                <div className="col-span-10 sm:col-span-7 lg:col-span-5">
+                  Document Name
+                </div>
+                <div className="hidden lg:block lg:col-span-2">Owner</div>
+                <div className="hidden sm:block sm:col-span-3 lg:col-span-2">
+                  Last Edited
+                </div>
+                <div className="hidden lg:block lg:col-span-2">Status</div>
+                <div className="col-span-2 sm:col-span-2 lg:col-span-1 text-right">
+                  Actions
+                </div>
               </div>
 
               {/* Rows */}
@@ -298,14 +304,14 @@ export function DocumentsContent({
                     exit={{ opacity: 0 }}
                     transition={{ delay: i * 0.03 }}
                     onClick={() => setSelectedDoc(doc)}
-                    className={`grid grid-cols-12 gap-4 items-center px-5 py-4 cursor-pointer transition-all border-b border-surface-700/20 hover:bg-surface-800/30 ${
+                    className={`grid grid-cols-12 gap-2 sm:gap-4 items-center px-3 sm:px-5 py-4 cursor-pointer transition-all border-b border-surface-700/20 hover:bg-surface-800/30 ${
                       selectedDoc?.id === doc.id
                         ? "bg-brand-600/5 border-l-2 border-l-brand-500"
                         : ""
                     }`}>
                     {/* Name */}
-                    <div className="col-span-5 flex items-center gap-3">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-surface-800 text-lg">
+                    <div className="col-span-10 sm:col-span-7 lg:col-span-5 flex items-center gap-2 sm:gap-3">
+                      <div className="flex h-8 w-8 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl bg-surface-800 text-sm sm:text-lg">
                         {docIcons[i % docIcons.length]}
                       </div>
                       <div className="min-w-0">
@@ -327,7 +333,7 @@ export function DocumentsContent({
                     </div>
 
                     {/* Owner */}
-                    <div className="col-span-2 flex items-center gap-2">
+                    <div className="hidden lg:flex lg:col-span-2 items-center gap-2">
                       <div className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-accent-500 text-[10px] font-bold text-white">
                         {(user.fullName || user.email).charAt(0).toUpperCase()}
                       </div>
@@ -335,12 +341,12 @@ export function DocumentsContent({
                     </div>
 
                     {/* Last Edited */}
-                    <div className="col-span-2 text-sm text-text-secondary">
+                    <div className="hidden sm:block sm:col-span-3 lg:col-span-2 flex-col justify-center text-xs sm:text-sm text-text-secondary">
                       {formatDate(doc.updated_at)}
                     </div>
 
                     {/* Status */}
-                    <div className="col-span-2">
+                    <div className="hidden lg:block lg:col-span-2">
                       <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-800 px-2.5 py-1 text-xs text-text-muted">
                         <div className="h-1.5 w-1.5 rounded-full bg-green-400" />
                         Private
@@ -348,7 +354,7 @@ export function DocumentsContent({
                     </div>
 
                     {/* Actions */}
-                    <div className="col-span-1 text-right relative">
+                    <div className="col-span-2 sm:col-span-2 lg:col-span-1 flex items-center justify-end gap-2 relative">
                       <button
                         onClick={(e) => {
                           e.stopPropagation();

@@ -179,9 +179,9 @@ export default function LandingPage() {
               synccanvas.app / workspace / my-project
             </div>
           </div>
-          <div className="grid grid-cols-12 bg-surface-950/60">
+          <div className="grid grid-cols-1 md:grid-cols-12 bg-surface-950/60">
             {/* Sidebar */}
-            <div className="col-span-3 border-r border-surface-700/30 p-4">
+            <div className="hidden md:block md:col-span-3 border-r border-surface-700/30 p-4">
               <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-text-muted">
                 Pages
               </div>
@@ -203,7 +203,7 @@ export default function LandingPage() {
               ))}
             </div>
             {/* Editor area */}
-            <div className="col-span-6 p-6">
+            <div className="col-span-1 md:col-span-6 p-6">
               <div className="mb-4 text-2xl font-bold text-text-primary">
                 Getting Started
               </div>
@@ -232,7 +232,7 @@ export default function LandingPage() {
               </div>
             </div>
             {/* AI Panel */}
-            <div className="col-span-3 border-l border-surface-700/30 p-4">
+            <div className="hidden md:block md:col-span-3 border-l border-surface-700/30 p-4">
               <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-text-muted">
                 <span>🤖</span> AI Assistant
               </div>
