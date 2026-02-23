@@ -74,12 +74,12 @@ export function AIAssistantContent({ user }: AIAssistantContentProps) {
 
   // Load sessions on mount
   useEffect(() => {
-    const loaded = loadSessions();
+    const loaded = loadSessions(user.email);
     setSessions(loaded);
     if (loaded.length > 0) {
       setActiveSessionId(loaded[0].id);
     }
-  }, []);
+  }, [user.email]);
 
   const activeSession = sessions.find((s) => s.id === activeSessionId) || null;
   const messages = activeSession?.messages || [];
