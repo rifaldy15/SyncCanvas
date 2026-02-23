@@ -155,12 +155,12 @@ export function DocumentsContent({
         className={`lg:ml-60 transition-all duration-300 ${selectedDoc ? "lg:mr-80" : ""}`}>
         {/* Top bar */}
         <header className="sticky top-0 z-30 border-b border-surface-700/50 bg-surface-950/80 backdrop-blur-xl px-4 sm:px-6 py-3 pl-14 lg:pl-6">
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
               <h1 className="text-xl font-bold text-text-primary">Documents</h1>
 
               {/* Search */}
-              <div className="relative">
+              <div className="relative flex-1 sm:flex-none">
                 <svg
                   className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted"
                   fill="none"
@@ -178,7 +178,7 @@ export function DocumentsContent({
                   placeholder="Search in Documents..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-40 sm:w-64 rounded-xl border border-surface-700 bg-surface-800/50 py-2 pl-10 pr-4 text-sm text-text-primary placeholder-text-muted outline-none transition-all focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
+                  className="w-full sm:w-64 rounded-xl border border-surface-700 bg-surface-800/50 py-2 pl-10 pr-4 text-sm text-text-primary placeholder-text-muted outline-none transition-all focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
                 />
               </div>
 
@@ -219,7 +219,7 @@ export function DocumentsContent({
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               <input
                 ref={fileInputRef}
                 type="file"
@@ -236,7 +236,7 @@ export function DocumentsContent({
               <button
                 onClick={handleCreate}
                 disabled={creating}
-                className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-accent-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 active:scale-95 disabled:opacity-50">
+                className="flex items-center gap-1 sm:gap-2 rounded-xl bg-linear-to-r from-brand-600 to-accent-600 px-3 sm:px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 active:scale-95 disabled:opacity-50">
                 <svg
                   className="h-4 w-4"
                   fill="none"
