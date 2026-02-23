@@ -37,16 +37,19 @@ const features = [
 
 export default function LandingPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden">
+    <main className="relative min-h-screen overflow-hidden bg-surface-950">
+      {/* Dynamic Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+
       {/* Background Orbs */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-brand-600/10 blur-[120px] animate-pulse-glow" />
+      <div className="pointer-events-none absolute inset-0 mix-blend-screen">
+        <div className="absolute left-1/4 top-1/4 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-600/20 blur-[120px] animate-pulse-glow" />
         <div
-          className="absolute right-1/4 bottom-1/3 h-[400px] w-[400px] rounded-full bg-accent-500/10 blur-[100px] animate-pulse-glow"
+          className="absolute right-1/4 bottom-1/3 h-[400px] w-[400px] translate-x-1/2 translate-y-1/2 rounded-full bg-accent-500/20 blur-[100px] animate-pulse-glow"
           style={{ animationDelay: "1.5s" }}
         />
         <div
-          className="absolute left-1/2 top-2/3 h-[300px] w-[300px] rounded-full bg-brand-400/5 blur-[80px] animate-pulse-glow"
+          className="absolute left-1/2 top-2/3 h-[300px] w-[300px] -translate-x-1/2 translate-y-1/2 rounded-full bg-brand-400/15 blur-[80px] animate-pulse-glow"
           style={{ animationDelay: "3s" }}
         />
       </div>
@@ -295,13 +298,11 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-surface-800 px-6 py-8">
+      <footer className="border-t border-surface-800 px-6 py-8 relative z-10 bg-surface-950/50 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <div className="text-sm text-text-muted">
-            © 2026 SyncCanvas. Built with ❤️ and AI.
-          </div>
+          <div className="text-sm text-text-muted">© 2026 SyncCanvas.</div>
           <div className="flex items-center gap-2">
-            <div className="flex h-6 w-6 items-center justify-center rounded bg-gradient-to-br from-brand-500 to-accent-500">
+            <div className="flex h-6 w-6 items-center justify-center rounded bg-linear-to-br from-brand-500 to-accent-500">
               <span className="text-[10px] font-bold text-white">S</span>
             </div>
             <span className="text-sm font-medium text-text-secondary">
