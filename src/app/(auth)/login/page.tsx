@@ -47,8 +47,25 @@ export default function LoginPage() {
       </div>
 
       {/* Card */}
-      <div className="glass rounded-2xl p-8">
-        <div className="mb-6 text-center">
+      <div className="glass relative rounded-2xl p-8">
+        <Link
+          href="/"
+          className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-lg text-text-muted transition-colors hover:bg-surface-800 hover:text-text-primary"
+          title="Back to home">
+          <svg
+            className="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+        </Link>
+        <div className="mb-6 mt-2 text-center">
           <h1 className="text-2xl font-bold text-text-primary">Welcome back</h1>
           <p className="mt-2 text-sm text-text-secondary">
             Sign in to your workspace
