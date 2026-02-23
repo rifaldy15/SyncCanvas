@@ -100,7 +100,10 @@ export default function LandingPage() {
             initial="hidden"
             animate="visible"
             className="mb-6 text-5xl font-extrabold leading-tight tracking-tight text-text-primary sm:text-6xl lg:text-7xl">
-            Create Together with <span className="gradient-text">AI Power</span>
+            Create Together with{" "}
+            <span className="bg-linear-to-r from-brand-400 via-accent-400 to-brand-400 bg-clip-text text-transparent animate-text-rgb">
+              AI Power
+            </span>
           </motion.h1>
 
           <motion.p
@@ -122,9 +125,9 @@ export default function LandingPage() {
             className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/register"
-              className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-brand-600 to-accent-600 px-8 py-3.5 text-base font-semibold text-white shadow-xl transition-all hover:shadow-2xl hover:shadow-brand-500/20 hover:scale-105 active:scale-95">
+              className="group relative overflow-hidden rounded-xl bg-linear-to-r from-brand-600 via-accent-500 to-brand-600 animate-bg-rgb px-8 py-3.5 text-base font-semibold text-white shadow-xl transition-all hover:shadow-2xl hover:shadow-brand-500/20 hover:scale-105 active:scale-95">
               <span className="relative z-10">Start Creating — Free</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-500 to-accent-500 opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-linear-to-r from-brand-500 via-accent-400 to-brand-500 opacity-0 transition-opacity animate-bg-rgb group-hover:opacity-100" />
             </Link>
             <button
               onClick={() =>
@@ -254,9 +257,11 @@ export default function LandingPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-text-primary sm:text-4xl">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
               Everything you need to{" "}
-              <span className="gradient-text">create together</span>
+              <span className="bg-linear-to-r from-accent-400 via-brand-400 to-accent-400 bg-clip-text text-transparent animate-text-rgb">
+                create together
+              </span>
             </h2>
             <p className="mx-auto max-w-xl text-text-secondary">
               A powerful workspace that combines real-time collaboration, AI
